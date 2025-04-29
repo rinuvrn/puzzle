@@ -22,7 +22,7 @@ class LeaderBoardController extends AbstractController
     public function index(EntityManagerInterface $entityManager): JsonResponse
     {
         $result = $entityManager->getRepository(Words::class)->findTopTenWords();
-        return new JsonResponse(['data' => $result], JsonResponse::HTTP_CREATED);
+        return new JsonResponse(['data' => $result], JsonResponse::HTTP_OK);
 
     }
 }

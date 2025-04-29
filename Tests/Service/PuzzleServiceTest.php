@@ -10,7 +10,7 @@ class PuzzleServiceTest extends TestCase
         $puzzleService = new PuzzleService();
         $this->assertSame([
             "id" => 1,
-            "puzzleString" => "iamrungocome",
+            "puzzleString" => "iamrungocomeintowaitherecheckyou",
             "createdAt" => "2025-04-27T09:07:39+02:00",
             "message" => "Puzzle started!"
         ], $puzzleService->fetchPuzzles());

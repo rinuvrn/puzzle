@@ -9,10 +9,10 @@ class GameServiceTest extends TestCase
     {
         $gameService = new GameService();
 
-        $this->assertSame(["gameId" => 1, "remainingString" => "amrugocome"], $gameService->initiate(1, ["username"=>"user1", "word"=>"in"]));
-        $this->assertSame(["gameId" => 1, "remainingString" => "rugocome"], $gameService->initiate(1, ["username"=>"user1", "word"=>"am"]));
-        $this->assertSame(["gameId" => 1, "remainingString" => "rucome"], $gameService->initiate(1, ["username"=>"user1", "word"=>"go"]));
-        $this->assertSame(["gameId" => 1, "remainingString" => "ru"], $gameService->initiate(1, ["username"=>"user1", "word"=>"come"]));
+        $this->assertSame(["gameId" => 1, "remainingString" => "amrugocomeintowaitherecheckyou"], $gameService->initiate(1, ["username"=>"user1", "word"=>"in"]));
+        $this->assertSame(["gameId" => 1, "remainingString" => "rugocomeintowaitherecheckyou"], $gameService->initiate(1, ["username"=>"user1", "word"=>"am"]));
+        $this->assertSame(["gameId" => 1, "remainingString" => "rucomeintowaitherecheckyou"], $gameService->initiate(1, ["username"=>"user1", "word"=>"go"]));
+        $this->assertSame(["gameId" => 1, "remainingString" => "ruintowaitherecheckyou"], $gameService->initiate(1, ["username"=>"user1", "word"=>"come"]));
 
     }
 }

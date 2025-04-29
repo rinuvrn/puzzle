@@ -56,15 +56,16 @@ class PuzzleController extends AbstractController
             );
         }
         $result = $this->gameService->initiate($puzzleId, $data);
+
         if (isset($result['error'])) {
             return new JsonResponse(['error' => $result['error']], JsonResponse::HTTP_BAD_REQUEST);
         }
         if ($result['remainingString'] === '') {
             $score = $this->puzzleService->completeGame($result);
-            return new JsonResponse(['score' => $score], JsonResponse::HTTP_CREATED);
+            return new JsonResponse(['score' => $score], JsonResponse::HTTP_OK);
         }
 
-        return new JsonResponse(['remainingString' => $result['remainingString']], JsonResponse::HTTP_CREATED);
+        return new JsonResponse(['remainingString' => $result['remainingString']], JsonResponse::HTTP_OK);
     }
 
     /**
@@ -84,6 +85,6 @@ class PuzzleController extends AbstractController
         $data = json_decode($request->getContent(), true);
         $data['gameId'] = $gameId;
         $score = $this->puzzleService->completeGame($data);
-        return new JsonResponse(['score' => $score], JsonResponse::HTTP_CREATED);
+        return new JsonResponse(['score' => $score], JsonResponse::HTTP_OK);
     }
 }
