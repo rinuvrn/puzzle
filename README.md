@@ -1,48 +1,95 @@
-Puzzle
+# Puzzle
 
-Puzzle  is a backend application built with Symfony 6.4, designed to manage student submissions for word puzzles. 
-Description:
+**Puzzle** is a backend application built with **Symfony 6.4**, designed to manage student submissions for word puzzles.
 
-Puzzle  provides a robust RESTful API that is easily readable and helps to manage students word puzzle submissions, evaluate , grade and show a leader board on completion of puzzle.
+---
 
-Technologies used:
+## 📋 Description
 
-•	Symfony 6.4
+Puzzle provides a robust RESTful API to manage student word puzzle submissions. It allows for:
 
-•	PHP 8.2.12 
+- Submitting and evaluating words
+- Grading performance
+- Displaying a leaderboard upon puzzle completion
 
-•	Doctrine ORM/DBAL
+---
 
-•	Various symfony bundles
+## 🛠 Technologies Used
 
-Dependencies:
+- Symfony 6.4  
+- PHP 8.2.12  
+- Doctrine ORM/DBAL  
+- Various Symfony Bundles  
 
-The project utilizes the following key dependencies managed by Composer:
+---
 
-•	Symfony Components:  symfony/framework-bundle,  symfony/console,  symfony/doctrine-messenger, symfony/http-client and many more (See composer.json for a complete list)
+## 📦 Dependencies
 
-•	Doctrine: doctrine/orm, doctrine/doctrine-bundle,doctrine/doctrine-migrations-bundle…
+Key dependencies managed via Composer include:
 
-Installation:
+- **Symfony Components**:  
+  `symfony/framework-bundle`, `symfony/console`, `symfony/doctrine-messenger`, `symfony/http-client`, and more.  
+  *(See `composer.json` for the full list)*
 
-1.	Create project directory (I used xampp for  setting up local server, so the project directory was created inside xampp/htdocs ).
-2.	Clone the repository to project directory.
-3.	Start  Apache , MySql  from xampp control panel.
-4.	Start the development server by running following command in from project root folder - php -S 127.0.0.1:8000 -t public
-5.	Configure environment variables like database connection in env.php 
-6.	Run composer install to install all dependencies.
-7.	Set up database by running the migrations with php bin/console doctrine:migrations:migrate from project root folder.
-8.	Now the application will be accessible at http://127.0.0.1:8000/
-9.	I have used symfony messenger with doctrine for doing asynchronous job, so it is advisable to run php bin/console messenger:consume async --time-limit=60  from project root folder so that the asynchronous queue get consumed. The time limit can be set appropriately.
+- **Doctrine Packages**:  
+  `doctrine/orm`, `doctrine/doctrine-bundle`, `doctrine/doctrine-migrations-bundle`, etc.
 
-List of API's
+---
 
+## 🚀 Installation
 
-/api/puzzle/start - API to start the puzzle game
+1. **Create Project Directory**  
+   *(Example: `xampp/htdocs/puzzle` if using XAMPP)*
 
-/api/puzzle/leaderboard - API to show the list of top 10 high scored words and their scores
+2. **Clone the Repository**
 
-/api/puzzle/{puzzleId}/submit - API to submit words
+   ```bash
+   git clone <repository-url>
+   ```
 
-/api/puzzle/{puzzleId}/stop - API to stop the puzzle game
+3. **Start XAMPP Services**  
+   Start **Apache** and **MySQL** from the XAMPP control panel.
 
+4. **Configure Environment Variables**  
+   Edit `.env` or `env.php` to set up the database connection and other variables.
+
+5. **Install Dependencies**
+
+   ```bash
+   composer install
+   ```
+
+6. **Run Migrations**
+
+   ```bash
+   php bin/console doctrine:migrations:migrate
+   ```
+
+7. **Start Development Server**
+
+   ```bash
+   php -S 127.0.0.1:8000 -t public
+   ```
+
+   Access the application at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+8. **Run Messenger Consumer** *(for asynchronous tasks)*
+
+   ```bash
+   php bin/console messenger:consume async --time-limit=60
+   ```
+
+   *(Adjust `--time-limit` as needed)*
+
+---
+
+## 📡 API Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `POST /api/puzzle/start` | Start a new puzzle game |
+| `GET /api/puzzle/leaderboard` | View the top 10 high-scoring words |
+| `POST /api/puzzle/{puzzleId}/submit` | Submit a word for a given puzzle |
+| `POST /api/puzzle/{puzzleId}/stop` | Stop the puzzle game |
+
+---
