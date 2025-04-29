@@ -28,10 +28,10 @@ Installation:
 1.	Create project directory (I used xampp for  setting up local server, so the project directory was created inside xampp/htdocs ).
 2.	Clone the repository to project directory.
 3.	Start  Apache , MySql  from xampp control panel.
-4.	Start the development server by running following command in command prompt from project root folder - php -S 127.0.0.1:8000 -t public
+4.	Start the development server by running following command in from project root folder - php -S 127.0.0.1:8000 -t public
 5.	Configure environment variables like database connection in env.php 
-6.	Run command composer install to install all dependencies.
-7.	Set up database by running the migrations with command php bin/console doctrine:migrations:migrate from project root folder.
+6.	Run composer install to install all dependencies.
+7.	Set up database by running the migrations with php bin/console doctrine:migrations:migrate from project root folder.
 8.	Now the application will be accessible at http://127.0.0.1:8000/
 9.	I have used symfony messenger with doctrine for doing asynchronous job, so it is advisable to run php bin/console messenger:consume async --time-limit=60  from project root folder so that the asynchronous queue get consumed. The time limit can be set appropriately.
 
