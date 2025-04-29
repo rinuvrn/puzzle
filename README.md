@@ -18,7 +18,9 @@ Technologies used:
 Dependencies:
 
 The project utilizes the following key dependencies managed by Composer:
+
 •	Symfony Components:  symfony/framework-bundle,  symfony/console,  symfony/doctrine-messenger, symfony/http-client and many more (See composer.json for a complete list)
+
 •	Doctrine: doctrine/orm, doctrine/doctrine-bundle,doctrine/doctrine-migrations-bundle…
 
 Installation:
