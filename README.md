@@ -8,8 +8,11 @@ Puzzle  provides a robust RESTful API that is easily readable and helps to manag
 Technologies used:
 
 •	Symfony 6.4
+
 •	PHP 8.2.12 
+
 •	Doctrine ORM/DBAL
+
 •	Various symfony bundles
 
 Dependencies:
